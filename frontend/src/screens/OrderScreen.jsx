@@ -194,9 +194,9 @@ const OrderScreen = () => {
                                     )}
                                 </ListGroup.Item>
                             )}
-                            </ListGroup>
-                        </Card>
-                    </Col>
+                        </ListGroup>
+                    </Card>
+                </Col>
             </Row>
         </>
     );
