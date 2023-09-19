@@ -1,3 +1,4 @@
+import { response } from 'express';
 import asyncHandler from '../middleware/asyncHandler.js';
 import Product from '../models/productModel.js';
 
@@ -94,6 +95,14 @@ const deleteProduct = asyncHandler(async (req, res) => {
     }
 });
 
+//@desc Get top rated products
+//@route GET /api/products/top
+//@access Public
+const getTopProducts = asyncHandler(async (req, res) => { 
+    const products = await Product.find({}).sort({ rating: -1 }).limit(3);
+    res.status(200).json(products);
+});
+
 //@desc Create new review
 //@route POST /api/products/:id/reviews
 //@access Private
@@ -137,5 +146,6 @@ export {
     createProduct, 
     updateProduct, 
     deleteProduct, 
-    createProductReview 
+    createProductReview,
+    getTopProducts,
 };
