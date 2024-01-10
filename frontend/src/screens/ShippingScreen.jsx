@@ -71,7 +71,7 @@ return <FormContainer>
         </Form.Group>
 
         <Button 
-        type='subit'
+        type='submit'
         variant='primary'
         classname='my-2'>
             Continue
